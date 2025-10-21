@@ -1,13 +1,13 @@
 class Stack:
-    def __init__(self):
+    def _init_(self):
         self.items = []
 
     def push(self, item):
-        self.items.insert(0, item)  # ❌ Wrong direction — should append at the end
+        self.items.append(item)  # ✅ Push to end
 
     def pop(self):
         if not self.is_empty():
-            return self.items.pop(0)  # ❌ Removes wrong element
+            return self.items.pop()  # ✅ Pop from end (LIFO)
         return None
 
     def is_empty(self):
@@ -17,4 +17,4 @@ s = Stack()
 s.push(1)
 s.push(2)
 s.push(3)
-print(s.pop())  # Expected 3, Got 1
+print(s.pop())  # ✅ Expected 3
